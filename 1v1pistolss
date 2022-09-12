@@ -66,7 +66,6 @@ oldNamecall = hookmetamethod(game, "__namecall", function(...)
 
 	return oldNamecall(...)
 end)
-local orionion = game:GetService("CoreGui"):FindFirstChild("Orion")
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
 local Window = OrionLib:MakeWindow({Name = tostring("Jack Hub"), HidePremium = true, SaveConfig = false})
@@ -78,7 +77,6 @@ local Tab = Window:MakeTab({
 })
 
 getgenv().cham = false
-getgenv().boxESP = false
 
 
 getgenv().esp_loaded = false
@@ -96,19 +94,6 @@ Tab:AddToggle({
         getgenv().Visibility = Value
     end   
 })
-
-Tab:AddToggle({
-    Name = "Box ESP",
-    Default = getgenv().Visibility,
-    Callback = function(Value)
-        if getgenv().esp_loaded == false and Value == true then
-            getgenv().esp_loaded = true
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/skatbr/Roblox-Releases/main/A_simple_esp.lua", true))()
-        end
-        getgenv().boxESP = Value
-    end   
-})
-
 
 Tab:AddToggle({
     Name = "Chams",
