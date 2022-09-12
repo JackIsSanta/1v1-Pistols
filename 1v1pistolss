@@ -1,3 +1,4 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Players = game:GetService("Players")
 
 local LocalPlayer = Players.LocalPlayer
@@ -135,8 +136,6 @@ oldNamecall = hookmetamethod(game, "__namecall", function(...)
 
 	return oldNamecall(...)
 end)
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-
 local Window = OrionLib:MakeWindow({Name = tostring("Jack Hub"), HidePremium = false, SaveConfig = false})
 
 local Tab = Window:MakeTab({
@@ -276,7 +275,6 @@ end
 
 
 
-local orionion = game:GetService("CoreGui"):FindFirstChild("Orion")
 
 
 
